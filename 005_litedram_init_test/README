@@ -1,0 +1,21 @@
+[> Getting started
+------------------
+1. Install Python3 and Vivado
+
+2. Obtain LiteX & Cores ecosystem:
+  Get litex_setup.py from:
+  https://github.com/enjoy-digital/litex/
+  python3 litex_setup.py init install
+
+3. Build the design:
+  ./arty.py
+
+4. Load the design to the FPGA:
+  ./load.py
+
+5. Compile the firmware:
+cd firmware
+make all
+
+6. Load the firmware to the RAM:
+lxterm /dev/ttyUSBX --kernel-adr=0x20000000 --kernel=firmware.bin

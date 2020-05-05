@@ -1,0 +1,26 @@
+[> Getting started
+------------------
+1. Install Python3 and Vivado
+
+2. Obtain LiteX & Cores ecosystem:
+  Get litex_setup.py from:
+  https://github.com/enjoy-digital/litex/
+  python3 litex_setup.py init install
+
+3. Build the design:
+  ./aller.py
+
+4. Load the design to the FPGA.
+
+5. Build the kernel and load it:
+cd software/kernel
+make
+sudo ./init.sh
+
+6. Test userspace utilities:
+cd software/user
+make
+./litepcie_util info
+./litepcie_util scratch_test
+./litepcie_util dma_test
+./litepcie_util uart_test

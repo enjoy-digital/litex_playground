@@ -1,0 +1,23 @@
+[> Getting started
+------------------
+1. Install Python3 and Vivado
+
+2. Obtain LiteX & Cores ecosystem:
+  Get litex_setup.py from:
+  https://github.com/enjoy-digital/litex/
+  python3 litex_setup.py init install
+
+3. Build the design:
+  ./arty.py
+
+4. Load the design to the FPGA:
+  ./load.py
+
+5. Run LiteX Server:
+  lxserver --uart --uart-port=/dev/ttyUSBX
+
+6. Run the test script:
+  ./test_reset.py
+
+7. Open the Waveform:
+  gtkwave dump.vcd
