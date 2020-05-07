@@ -10,7 +10,6 @@
 002_camlink_4k_test:     Test and reversing of the Camlink 4K with LiteX.
 003_arty_ddr3_prjxray:   Minimal Arty DDR3 Design for tests with Project X-Ray.
 004_litepcie_aller_test: Test with LitePCIe and Numato Aller board.
-004_litepcie_aller_test: Test with LitePCIe and Numato Aller board.
 005_litedram_init_test:  Example of LiteDRAM initialization with a firmware in RAM loaded via serialboot.
 006_microwatt_test:      Microwatt startup test with LiteX & LiteScope.
 

@@ -68,7 +68,7 @@ class CRG(Module, AutoCSR):
 # PCIeSoC -----------------------------------------------------------------------------------------
 
 class PCIeSoC(SoCCore):
-    def __init__(self, platform, pcie="pcie_x4", **kwargs):
+    def __init__(self, platform, **kwargs):
         sys_clk_freq = int(100e6)
 
         # SoCCore ----------------------------------------------------------------------------------
@@ -115,9 +115,10 @@ class PCIeSoC(SoCCore):
 
         # PCIe -------------------------------------------------------------------------------------
         # PHY
-        self.submodules.pcie_phy = S7PCIEPHY(platform, platform.request(pcie),
-            data_width = 64 if pcie == "pcie_x1" else 128,
+        self.submodules.pcie_phy = S7PCIEPHY(platform, platform.request("pcie_x4"),
+            data_width = 128,
             bar0_size  = 0x20000)
+        self.pcie_phy.add_timing_constraints(platform)
         platform.add_false_path_constraints(self.crg.cd_sys.clk, self.pcie_phy.cd_pcie.clk)
         self.add_csr("pcie_phy")
 
